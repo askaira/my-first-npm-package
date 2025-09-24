@@ -1,0 +1,15 @@
+name: Publish Check
+
+on:
+  push:
+    branches: [ "main" ]
+  tags:
+    - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Say hello
+        run: echo "Automation works on pushes and tags!"
